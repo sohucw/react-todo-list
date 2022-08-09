@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
-
+const initData = [
+    { 
+        id: Math.floor(Math.random() * 10000),
+        text: 'Test'
+    },
+    { 
+        id: Math.floor(Math.random() * 10000),
+        text: '组件设计'
+    },
+    { 
+        id: Math.floor(Math.random() * 10000),
+        text: '数据状态设计'
+    },
+    { 
+        id: Math.floor(Math.random() * 10000),
+        text: '万能公式'
+    },
+    { 
+        id: Math.floor(Math.random() * 10000),
+        text: 'React VS Vue'
+    }
+    
+];
 function TodoList() {
-    const [todos, setTodos] = useState ([]);
+    const [todos, setTodos] = useState (initData);
 
     const addTodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
